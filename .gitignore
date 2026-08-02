@@ -1,0 +1,31 @@
+# --- Secrets --------------------------------------------------------------
+.env
+*.key
+
+# --- Generated vector store ----------------------------------------------
+# The index is reproducible from the source PDF via `python -m src.vectorstore --build`.
+chroma_db/
+
+# --- Python ---------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# --- Virtual environments -------------------------------------------------
+.venv/
+venv/
+env/
+
+# --- Model caches ---------------------------------------------------------
+.cache/
+models/
+
+# --- Tooling / OS ---------------------------------------------------------
+.streamlit/secrets.toml
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

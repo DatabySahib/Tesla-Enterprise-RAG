@@ -1,0 +1,45 @@
+# Tesla Enterprise RAG -- pinned dependencies
+#
+# Install into a dedicated virtual environment:
+#
+#   python -m venv .venv
+#   .venv\Scripts\activate            # Windows
+#   source .venv/bin/activate         # macOS / Linux
+#   pip install -r requirements.txt
+#
+# torch is pulled in by sentence-transformers. For a CPU-only install (~200 MB
+# instead of ~2.5 GB with bundled CUDA), prefix the command with:
+#   pip install --extra-index-url https://download.pytorch.org/whl/cpu -r requirements.txt
+
+# --- Core RAG framework ---------------------------------------------------
+langchain==1.3.14
+langchain-core==1.5.3
+langchain-community==0.4.2
+langchain-text-splitters==1.1.2
+
+# --- Embeddings (local, no API key) ---------------------------------------
+langchain-huggingface==1.2.2
+sentence-transformers==5.6.1
+transformers==5.14.1
+
+# --- Vector database ------------------------------------------------------
+chromadb==1.5.9
+langchain-chroma==1.1.0
+
+# --- Document ingestion ---------------------------------------------------
+pypdf==6.14.2
+
+# --- Interfaces -----------------------------------------------------------
+streamlit==1.51.0
+fastapi==0.141.1
+uvicorn[standard]==0.52.1
+pydantic==2.13.4
+
+# --- Configuration --------------------------------------------------------
+python-dotenv==1.1.1
+
+# --- Optional generative backends -----------------------------------------
+# Uncomment the one you intend to use; the engine falls back to extractive
+# retrieval-only mode when none is available.
+# langchain-openai==1.1.2      # requires OPENAI_API_KEY
+# langchain-ollama==1.1.1      # requires a local Ollama daemon
